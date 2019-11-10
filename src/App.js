@@ -1,11 +1,16 @@
 import React from 'react';
-import './App.css';
-import { Home } from './pages/Home';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './util';
+
+import './assets/styles/styles.scss';
+import './assets/styles/card.scss';
 
 function App() {
   return (
     <div className="App">
-        <Home />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </div>
   );
 }
