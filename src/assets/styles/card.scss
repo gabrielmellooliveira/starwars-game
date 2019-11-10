@@ -1,0 +1,109 @@
+$border-radius-size: 14px;
+$colorCard: #40739e;
+
+.wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    &:focus {
+        outline: 0;
+    }
+}
+  
+.card:hover {
+    cursor: pointer;
+    color: #95a5a6;
+}
+  
+.card {
+    background: white;
+    width: 300px;
+    display: inline-block;
+    margin: auto;
+    border-radius: $border-radius-size + 5;
+    position: relative;
+    text-align: center;
+    box-shadow: -1px 15px 30px -12px black;
+    z-index: 9999;
+}
+  
+.image-card {
+    border-top-left-radius: $border-radius-size + 5; 
+    border-top-right-radius: $border-radius-size + 5;
+    margin-bottom: 10px;
+}
+  
+.card-level {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: $colorCard;
+}
+  
+.card-unit-name {
+    font-size: 26px;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+  
+.card-unit-description {
+    padding: 20px;
+    margin-bottom: 10px;
+    color: black;
+}
+    
+.card-unit-stats {
+    
+    color: white;
+    font-weight: 700;
+    border-bottom-left-radius: $border-radius-size;
+    border-bottom-right-radius: $border-radius-size;
+    
+    .one-third {
+        width: 33%;
+        float: left;
+        padding: 20px 15px;
+    }
+    
+    sup {
+        position: absolute;
+        bottom: 4px; 
+        font-size: 45%;
+        margin-left: 2px;
+    }
+    
+    .stat {
+        position: relative;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .stat-value {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+    }
+  
+    .no-border {
+        border-right: none;
+    }
+}
+
+.card-unit-stats-sw {
+    background: $colorCard;
+    
+    .one-third {
+       border-right: 1px solid #dcdde1;
+    }
+}
+  
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
