@@ -40,7 +40,7 @@ export function Home() {
             <Grid container alignItems="center" justify="center" className="header">
                 <HeaderGame />
 
-                {(!error && !loading) &&
+                {!error &&
                     <PaginationCards 
                         data={paginationPeople}
                         onPrevious={() => onRequest(paginationPeople.previous)}

@@ -10,7 +10,7 @@ export class CustomSearchApi {
         .then(response => {
 
             const infos = response.items.map(item => {
-                const isValid = item.pagemap && item.pagemap.cse_image && item.pagemap.cse_image.lenght > 0;
+                const isValid = item.pagemap && item.pagemap.cse_image && item.pagemap.cse_image.length > 0;
 
                 if (isValid) {
                     return { image: item.pagemap.cse_image[0].src, snippet: item.snippet };

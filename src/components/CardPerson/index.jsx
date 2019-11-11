@@ -4,7 +4,7 @@ import { PeopleUtil } from '../../util';
 import { CustomSearchApi } from '../../services';
 
 export function CardPerson({ person }) {
-    const { name, height, mass, films, gender } = person;
+    const { name, height, mass, films, gender, url } = person;
 
     const [info, setInfo] = useState({
         image: 'http://www.central3.com.br/wp-content/themes/c3/img/default-placeholder.png',
@@ -12,25 +12,24 @@ export function CardPerson({ person }) {
     });
 
     useEffect(() => {
-        // CustomSearchApi.getInfos(name)
-        //     .then(data => {
-        //         console.log('data', data[0])
-        //         if (!data.error) {
-        //             if (data.length > 0) {
-        //                 setInfo(data[0]);
-        //             }
-        //         } else {
-        //             setInfo({
-        //                 image: 'http://www.central3.com.br/wp-content/themes/c3/img/default-placeholder.png',
-        //                 snippet: 'dshfadshfoudshoif uhdhfadhsfohdau fahdshfaodhsofiah doiuhfaoid uhfiadhfhad fa dhsfhadisuhfoah odsuhfa hd'
-        //             });
-        //         }
-        //     });
+        CustomSearchApi.getInfos(name)
+            .then(data => {
+                if (!data.error) {
+                    if (data.length > 0) {
+                        setInfo(data[0]);
+                    }
+                } else {
+                    setInfo({
+                        image: 'http://www.central3.com.br/wp-content/themes/c3/img/default-placeholder.png',
+                        snippet: 'dshfadshfoudshoif uhdhfadhsfohdau fahdshfaodhsofiah doiuhfaoid uhfiadhfhad fa dhsfhadisuhfoah odsuhfa hd'
+                    });
+                }
+            });
     }, [ name ]);
 
     return (
         <div className="wrapper">
-            <Link to={`/starships?personId=${PeopleUtil.GetPersonId(person.url)}`}>
+            <Link to={`/starships?personId=${PeopleUtil.GetPersonId(url)}`}>
                 <div className="card">
                     <div>
                         <img src={info.image} alt={name} width="300px" height="230px" className="image-card" />

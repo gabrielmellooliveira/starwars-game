@@ -53,7 +53,15 @@ $colorCard: #40739e;
     margin-bottom: 10px;
     color: black;
 }
+  
+.card-unit-stats-sw {
+    background: $colorCard;
     
+    .one-third {
+       border-right: 1px solid #dcdde1;
+    }
+}
+
 .card-unit-stats {
     
     color: white;
@@ -88,14 +96,6 @@ $colorCard: #40739e;
   
     .no-border {
         border-right: none;
-    }
-}
-
-.card-unit-stats-sw {
-    background: $colorCard;
-    
-    .one-third {
-       border-right: 1px solid #dcdde1;
     }
 }
   

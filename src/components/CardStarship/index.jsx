@@ -16,10 +16,10 @@ export function CardStarship({ starship }) {
     }, [ name ]);
 
     return (
-        <div className="wrapper" style={{ width: 900 }}>
-            <div className="card" style={{ width: 400 }}>
+        <div className="wrapper">
+            <div className="card">
                 <div>
-                    <img src={image} alt={name} width="400px" height="300px" className="image-card" />
+                    <img src={image} alt={name} width="300px" height="230px" className="image-card" />
                 </div>
                 
                 <div className="card-level">{model}</div>

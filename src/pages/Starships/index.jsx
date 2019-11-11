@@ -9,6 +9,8 @@ import {
     HeaderGame, ButtonGame, Message
 } from '../../components';
 
+import '../../assets/styles/styles.scss';
+
 export function Starships({ history }) {
  
     const location = useLocation();
@@ -57,19 +59,19 @@ export function Starships({ history }) {
 
     return (
         <div>
-            <Grid container alignItems="center" justify="center" className="header">
+            <Grid container alignItems="center" justify="center" className="header" style={{ padding: 0 }}>
                 <HeaderGame />
 
-                <Grid item style={{ width: '100%', display: 'flex' }}>
+                <div style={{ width: '100%', paddingLeft: 20 }}>
                     <ButtonGame text="Back" onClick={back} />
-                </Grid>
+                </div>
             </Grid>
 
             <Grid container justify="center" className="container-cards">
                 {loading
                     ?
                         LoadingUtil.GetArrayLoading(2).map(index => 
-                            <Grid container item key={index} justify="center" md={6} sm={6} xs={12} style={{ marginBottom: 20 }}> 
+                            <Grid container justify="center" item key={index} md={4} sm={6} xs={12} style={{ marginBottom: 20 }}> 
                                 <CardStarshipSkeleton />
                             </Grid>
                         )
@@ -79,7 +81,7 @@ export function Starships({ history }) {
                             <Message text={message} />
                         :
                             starships && starships.map((starship, key) =>
-                                <Grid container item key={key} justify="center" md={6} sm={6} xs={12} style={{ marginBottom: 20 }}> 
+                                <Grid container justify="center" item key={key} md={4} sm={6} xs={12} style={{ marginBottom: 20 }}> 
                                     <CardStarship starship={starship} />
                                 </Grid>
                             )

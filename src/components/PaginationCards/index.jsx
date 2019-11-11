@@ -9,7 +9,7 @@ export function PaginationCards({ data, onPrevious, onNext }) {
         <>
             <Grid container alignItems="center" style={{ width: '100%' }}>
                 <span className="total-count">
-                    Total of people: {data.count}
+                    Total of people: {data.count ? data.count : 'xx'}
                 </span>
             </Grid>
             <Grid container className="buttons-pagination">

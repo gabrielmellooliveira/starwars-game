@@ -3,10 +3,10 @@ import { Skeleton } from '@material-ui/lab';
 
 export function CardStarshipSkeleton() {
     return (
-        <div className="wrapper" style={{ width: 900 }}>
-            <div className="card" style={{ width: 400 }}>
+        <div className="wrapper">
+            <div className="card">
                 <div>
-                    <Skeleton variant="rect" width="400px" height="300px" className="image-card"/>
+                    <Skeleton variant="rect" width="300px" height="230px" className="image-card"/>
                 </div>
                 
                 <Skeleton className="card-level"/>
